@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dialogue Box Example</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,6 +59,7 @@
             margin-top: 10px;
         }
     </style>
+
 </head>
 <body>
     <h1>Interactive Dialogue Box</h1>
@@ -72,5 +74,24 @@
         <button class="btn" onclick="submitMessage()">Submit</button>
         <button class="close-btn" onclick="closeDialogue()">Close</button>
     </div>
+
+    <script>
+        function openDialogue() {
+            document.getElementById("dialogueBox").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function closeDialogue() {
+            document.getElementById("dialogueBox").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        function submitMessage() {
+            let message = document.getElementById("userInput").value;
+            alert("You entered: " + message);
+            closeDialogue();
+        }
+    </script>
+
 </body>
 </html>

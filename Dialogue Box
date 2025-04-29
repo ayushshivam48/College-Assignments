@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialogue Box Example</title>
+</head>
+<body>
+    <h1>Interactive Dialogue Box</h1>
+    <button class="btn" onclick="openDialogue()">Open Dialogue</button>
 
+    <div class="overlay" id="overlay"></div>
+
+    <div class="dialogue-box" id="dialogueBox">
+        <h2>Enter Your Message</h2>
+        <input type="text" id="userInput" placeholder="Type something..." />
+        <br><br>
+        <button class="btn" onclick="submitMessage()">Submit</button>
+        <button class="close-btn" onclick="closeDialogue()">Close</button>
+    </div>
+</body>
+</html>

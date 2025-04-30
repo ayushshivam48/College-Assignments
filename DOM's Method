@@ -30,7 +30,31 @@
     <p class="info">Thank you for visiting!</p>
 
     <script>
-        
+        function showGreeting() {
+            const name = document.getElementById("nameInput").value;
+            const greetingElement = document.getElementById("greeting");
+            if (name) {
+                greetingElement.textContent = "Hello, " + name + "! Welcome to my site.";
+            } else {
+                greetingElement.textContent = "Please enter your name.";
+            }
+        }
+
+        // Get element by ID
+        const heading = document.getElementById("mainHeading");
+        console.log("Element by ID: ", heading.textContent);
+
+        // Get elements by class name
+        const infoElements = document.getElementsByClassName("info");
+        for (let i = 0; i < infoElements.length; i++) {
+            console.log("Element by Class Name: ", infoElements[i].textContent);
+        }
+
+        // Get elements by tag name
+        const paragraphs = document.getElementsByTagName("p");
+        for (let i = 0; i < paragraphs.length; i++) {
+            console.log("Element by Tag Name: ", paragraphs[i].textContent);
+        }
     </script>
 </body>
 </html>

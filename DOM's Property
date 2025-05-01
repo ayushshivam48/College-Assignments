@@ -34,7 +34,17 @@
     </div>
 
     <script>
-        
+        function updateDOM() {
+            document.title = "Web Tech";
+
+            document.body.style.backgroundColor = "lightblue";
+
+
+            document.getElementById("title").innerText = "Title: " + document.title;
+            document.getElementById("url").innerText = "URL: " + document.URL;
+            document.getElementById("domain").innerText = "Domain: " + document.domain;
+            document.getElementById("lastModified").innerText = "Last Modified: " + document.lastModified;
+        }
     </script>
 
 </body>

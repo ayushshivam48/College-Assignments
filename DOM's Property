@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Properties Example</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM Properties Example</h1>
+    <p>Click the button to update the document properties.</p>
+    <button onclick="updateDOM()">Update DOM</button>
+
+    <div id="info">
+        <h2>Document Information</h2>
+        <p id="title"></p>
+        <p id="url"></p>
+        <p id="domain"></p>
+        <p id="lastModified"></p>
+    </div>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
 

@@ -24,7 +24,32 @@
     <input type="text" id="textInput" placeholder="Type something...">
 
     <script>
-        
+        let box = document.getElementById("box");
+        let input = document.getElementById("textInput");
+
+        // Mouse Events
+        box.addEventListener("mouseover", function() {
+            box.style.backgroundColor = "lightgreen";
+            box.innerText = "Mouse Over!";
+        });
+
+        box.addEventListener("mouseout", function() {
+            box.style.backgroundColor = "lightblue";
+            box.innerText = "Mouse Out!";
+        });
+
+        box.addEventListener("mousemove", function(event) {
+            box.innerText = `X: ${event.clientX}, Y: ${event.clientY}`;
+        });
+
+        // Keyboard Events
+        input.addEventListener("keyup", function(event) {
+            console.log("Key Up: " + event.key);
+        });
+
+        input.addEventListener("keypress", function(event) {
+            console.log("Key Press: " + event.key);
+        });
     </script>
 
 </body>

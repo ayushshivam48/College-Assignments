@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouse and Keyboard Events</title>
     <style>
-        
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            border: 2px solid black;
+        }
     </style>
 </head>
 <body>

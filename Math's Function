@@ -24,7 +24,28 @@
     <p id="result"></p>
 
     <script>
-        
+        function calculate() {
+            let num = parseFloat(document.getElementById('num').value);
+            if (isNaN(num)) {
+                document.getElementById('result').innerHTML = "Please enter a valid number.";
+                return;
+            }
+            
+            let sqrt = Math.sqrt(num);
+            let power = Math.pow(num, 2);
+            let log = Math.log(num);
+            let sine = Math.sin(num);
+            let cosine = Math.cos(num);
+            
+            document.getElementById('result').innerHTML = `
+                <strong>Results:</strong><br>
+                Square Root: ${sqrt.toFixed(4)}<br>
+                Square: ${power.toFixed(4)}<br>
+                Natural Log: ${log.toFixed(4)}<br>
+                Sine: ${sine.toFixed(4)}<br>
+                Cosine: ${cosine.toFixed(4)}
+            `;
+        }
     </script>
 </body>
 </html>

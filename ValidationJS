@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stylish Registration Form</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+
+  <form onsubmit="return validateForm()">
+    <h2>Registration Form</h2>
+
+    <label for="name">Name</label>
+    <input type="text" id="name">
+    <span id="nameError" class="error"></span>
+
+    <label for="email">Email</label>
+    <input type="text" id="email">
+    <span id="emailError" class="error"></span>
+
+    <label for="password">Password</label>
+    <input type="password" id="password">
+    <div class="checkbox-container">
+      <input type="checkbox" onclick="togglePassword('password')"> Show Password
+    </div>
+    <span id="passwordError" class="error"></span>
+
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword">
+    <div class="checkbox-container">
+      <input type="checkbox" onclick="togglePassword('confirmPassword')"> Show Password
+    </div>
+    <span id="confirmPasswordError" class="error"></span>
+
+    <input type="submit" value="Register">
+  </form>
+
+  <script>
+    
+  </script>
+
+</body>
+</html>
 

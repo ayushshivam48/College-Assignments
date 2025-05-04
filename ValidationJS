@@ -122,7 +122,50 @@
   </form>
 
   <script>
-    
+    function validateForm() {
+      let isValid = true;
+
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value;
+      let confirmPassword = document.getElementById("confirmPassword").value;
+
+      document.getElementById("nameError").innerHTML = "";
+      document.getElementById("emailError").innerHTML = "";
+      document.getElementById("passwordError").innerHTML = "";
+      document.getElementById("confirmPasswordError").innerHTML = "";
+
+      if (name === "") {
+        document.getElementById("nameError").innerHTML = "Name is required";
+        isValid = false;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (email === "") {
+        document.getElementById("emailError").innerHTML = "Email is required";
+        isValid = false;
+      } else if (!email.match(emailPattern)) {
+        document.getElementById("emailError").innerHTML = "Enter a valid email";
+        isValid = false;
+      }
+
+      if (password.length < 6) {
+        document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters";
+        isValid = false;
+      }
+
+      if (confirmPassword !== password || confirmPassword === "") {
+        document.getElementById("confirmPasswordError").innerHTML = "Passwords do not match";
+        isValid = false;
+      }
+
+      return isValid;
+    }
+
+    function togglePassword(fieldId) {
+      let field = document.getElementById(fieldId);
+      field.type = field.type === "password" ? "text" : "password";
+    }
   </script>
 
 </body>

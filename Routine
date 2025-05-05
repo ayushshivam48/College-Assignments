@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="room-info">
+        <h3>AMITY INSTITUTE OF INFORMATION TECHNOLOGY, AMITY UNIVERSITY PATNA</h3>
+        <h4>CLASS SCHEDULE FOR BCA-IV (A) (2023-2027)</h4>
+        <p>Room No-101, Class Teacher: Mr. Niraj Kumar Rai</p>
+    </div>
+    <table>
+        <tr>
+            <th>Day/Timing</th>
+            <th>08:30-09:15</th>
+            <th>09:20-10:05</th>
+            <th>10:10-10:55</th>
+            <th>11:00-11:45</th>
+            <th>11:50-12:35</th>
+            <th>01:00-01:45</th>
+        </tr>
+        <tr>
+            <td class="day-col">Monday</td>
+            <td>FREN144-French Through Communicative Approach [Dr. Amalesh Kumar]</td>
+            <td>CSIT151-Software Engineering and Software Modelling(Minor) [Mr. Suman Kumar Mishra]</td>
+            <td>CSIT248-Advanced Web Technology(Major) [Ms. Khushboo]</td>
+            <td>CSIT361-Introduction to AI [Mr. Niraj Kumar Rai]</td>
+            <td>BS208-Creativity for Team Excellence [Vacant]</td>
+            <td>CSIT151-Software Engineering and Software Modelling(Minor)-LAB-3</td>
+        </tr>
+        <tr>
+            <td class="day-col">Tuesday</td>
+            <td>ACCT102-Accounting Fundamentals(Minor) [Mr. Anup Sharma]</td>
+            <td>BS208-Creativity for Team Excellence [Vacant]</td>
+            <td>CSIT248-Advanced Web Technology(Major) [Ms. Khushboo]</td>
+            <td>CSIT361-Introduction to AI [Mr. Niraj Kumar Rai]</td>
+            <td>IT425-Cyber And Information Security [Mr. Prasanna Kumar]</td>
+            <td>CSIT151-Software Engineering and Software Modelling(Minor)-LAB-3</td>
+        </tr>
+        <tr>
+            <td class="day-col">Wednesday</td>
+            <td>ACCT102-Accounting Fundamentals(Minor) [Mr. Anup Sharma]</td>
+            <td>CSIT151-Software Engineering and Software Modelling(Minor) [Mr. Suman Kumar Mishra]</td>
+            <td>CSIT248-Advanced Web Technology(Major) [Ms. Khushboo]</td>
+            <td>CSIT361-Introduction to AI [Mr. Niraj Kumar Rai]</td>
+            <td>IT425-Cyber And Information Security [Mr. Prasanna Kumar]</td>
+            <td>CSIT248-Advanced Web Technology(Major)-LAB-3</td>
+        </tr>
+        <tr>
+            <td class="day-col">Thursday</td>
+            <td>ACCT102-Accounting Fundamentals(Minor) [Mr. Anup Sharma]</td>
+            <td>CSIT151-Software Engineering and Software Modelling(Minor) [Mr. Suman Kumar Mishra]</td>
+            <td>FREN144-French Through Communicative Approach [Dr. Amalesh Kumar]</td>
+            <td>CSIT361-Introduction to AI [Mr. Niraj Kumar Rai]</td>
+            <td>CSIT248-Advanced Web Technology(Major) [Ms. Khushboo]</td>
+            <td>CSIT248-Advanced Web Technology(Major)-LAB-3</td>
+        </tr>
+        <tr>
+            <td class="day-col">Friday</td>
+            <td>CSIT151-Software Engineering and Software Modelling(Minor) [Mr. Suman Kumar Mishra]</td>
+            <td>CSIT151-Software Engineering and Software Modelling(Minor) [Mr. Suman Kumar Mishra]</td>
+            <td>CSIT248-Advanced Web Technology(Major) [Ms. Khushboo]</td>
+            <td>BS208-Creativity for Team Excellence [Vacant]</td>
+            <td>IT425-Cyber And Information Security [Mr. Prasanna Kumar]</td>
+            <td>CSIT248-Advanced Web Technology(Major)-LAB-3</td>
+        </tr>
+    </table>
+</body>
+</html>
 

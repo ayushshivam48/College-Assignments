@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        Welcome to My Portfolio
+    </header>
+
+    <div class="container">
+        
+
+        <img src="1.jpg" alt="Your Profile Picture" style="float: right; margin-left: 10px; width: 200px; height: 200px;"> <h2 style="display: inline;">Ayush Shivam</h2>
+        <p>I am a BCA Student.</p>
+
+        <div class="section">
+            <h3>Personal Details</h3>
+            <p>I am a student with a background in Computer Science and having a work experience of 2 years. I enjoy working on innovative projects and solving real-world problems.</p>
+        </div>
+
+        <div class="section">
+            <h3>Skills</h3>
+            <ul>
+                <li>HTML, CSS, JavaScript (Web Development)</li>
+                <li>Data Structures and Algorithms</li>
+                <li>Software Engineering and Modelling</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Education</h3>
+            <table>
+                <tr>
+                    <th>Qualification</th>
+                    <th>Board/University</th>
+                    <th>Percentage/CGPA</th>
+                </tr>
+                <tr>
+                    <td>Class 10</td>
+                    <td>CBSE</td>
+                    <td>84%</td>
+                </tr>
+                <tr>
+                    <td>Class 12</td>
+                    <td>CBSE</td>
+                    <td>76%</td>
+                </tr>
+                <tr>
+                    <td>BCA</td>
+                    <td>Amity University Patna</td>
+                    <td>8.11 CGPA</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3>Experience</h3>
+            <table>
+                <tr>
+                    <th>Role</th>
+                    <th>Organization</th>
+                    <th>Duration</th>
+                </tr>
+                <tr>
+                    <td>Co-Founder and CMO</td>
+                    <td>Bitfusion Dynamics Research</td>
+                    <td>1.5 Years</td>
+                </tr>
+                <tr>
+                    <td>Software Engineer</td>
+                    <td>Safetitude Consulting LLP</td>
+                    <td>2 months</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3>Projects</h3>
+            <ul>
+                <li><b>Project 1:</b> Stone Forge Industries(Website)</li>
+                <li><b>Project 2:</b> Bank Management System</li>
+                <li><b>Project 3:</b> Inventory Management System</li>
+            </ul>
+        </div>
+
+        <div class="social-links">
+            <h3>Connect with Me</h3>
+            <a href="https://in.linkedin.com/in/ayushshivam48" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ayushshivam48" target="_blank">GitHub</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Ayush Shivam. All Rights Reserved.
+    </footer>
+</body>
+</html>
 

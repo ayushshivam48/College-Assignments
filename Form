@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Student Form</h1>
+        <form id="studentForm">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" name="studentName" placeholder="Enter student name" required>
 
+            <label for="enrollment">Enrollment Number:</label>
+            <input type="text" id="enrollment" name="enrollment" placeholder="Enter enrollment number" required>
+
+            <label for="class">Class:</label>
+            <input type="text" id="class" name="class" placeholder="Enter class" required>
+
+            <button type="button" onclick="saveData()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+</html>
+
+</body>
+</html>

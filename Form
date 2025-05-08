@@ -79,7 +79,23 @@
     </div>
 
     <script>
-        
+        function saveData() {
+            const studentName = document.getElementById('studentName').value;
+            const enrollment = document.getElementById('enrollment').value;
+            const className = document.getElementById('class').value;
+
+            if (studentName && enrollment && className) {
+                const data = `Student Name: ${studentName}\nEnrollment Number: ${enrollment}\nClass: ${className}`;
+                const blob = new Blob([data], { type: 'text/plain' });
+                const anchor = document.createElement('a');
+                anchor.href = URL.createObjectURL(blob);
+                anchor.download = 'student_data.txt';
+                anchor.click();
+                alert('Data saved successfully!');
+            } else {
+                alert('Please fill out all fields!');
+            }
+        }
     </script>
 </body>
 </html>

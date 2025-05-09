@@ -69,7 +69,31 @@
         }
     </style>
     <script>
-        
+        function showAdditionalFields() {
+            const year = document.getElementById('year').value;
+            const additionalFields = document.getElementById('additional-fields');
+
+            if (year) {
+                additionalFields.classList.remove('hidden');
+
+                // Update the form dynamically for Class Details and Subject
+                const classField = document.getElementById('class-field');
+                const subjectField = document.getElementById('subject');
+
+                if (year === '1st year') {
+                    classField.innerHTML = '<option>Basic Science</option><option>Intro to Programming</option>';
+                    subjectField.innerHTML = '<option>Mathematics</option><option>Physics</option><option>Chemistry</option>';
+                } else if (year === '2nd year') {
+                    classField.innerHTML = '<option>Advanced Programming</option><option>Database Management</option>';
+                    subjectField.innerHTML = '<option>Data Structures</option><option>Algorithms</option><option>Discrete Math</option>';
+                } else {
+                    classField.innerHTML = '<option>AI Applications</option><option>Cloud Infrastructure</option>';
+                    subjectField.innerHTML = '<option>AI</option><option>Machine Learning</option><option>Cloud Computing</option>';
+                }
+            } else {
+                additionalFields.classList.add('hidden');
+            }
+        }
     </script>
 </head>
 <body>

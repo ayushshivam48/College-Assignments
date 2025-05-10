@@ -252,7 +252,45 @@
   </div>
 
   <script>
-    
+    document.getElementById("registrationForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default submission
+  
+      const fullName = document.getElementById("fullname").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const contact = document.getElementById("contact").value.trim();
+      const dob = document.getElementById("dob").value;
+      const gender = document.querySelector('input[name="gender"]:checked');
+  
+      // Basic Validation
+      if (!fullName || !email || !contact || !dob || !gender) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+  
+      // Validate phone number length
+      if (!/^\d{10}$/.test(contact)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+      }
+  
+      // Email format (HTML5 already does this, but reinforcing)
+      if (!/\S+@\S+\.\S+/.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+  
+      // Optional: Check age (must be at least 5 years old)
+      const birthDate = new Date(dob);
+      const age = new Date().getFullYear() - birthDate.getFullYear();
+      if (age < 5) {
+        alert("Student must be at least 5 years old.");
+        return;
+      }
+  
+      // If everything is valid
+      alert("Form submitted successfully!");
+      this.reset(); // Optional: reset form after submission
+    });
   </script>
 </body>
 </html>

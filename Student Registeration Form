@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Student Registration Form</h2>
+    <form>
+
+      <div class="form-group">
+        <label for="fullname">Full Name *</label>
+        <input type="text" id="fullname" name="fullname" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="dob">Date of Birth *</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+          <label>Gender *</label>
+          <div class="gender-group">
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="contact">Contact Number *</label>
+          <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required placeholder="10-digit number">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address *</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+      </div>
+
+      <hr>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="class">Class Applying For *</label>
+          <input type="text" id="class" name="class" required>
+        </div>
+
+        <div class="form-group">
+          <label for="school">Previous School</label>
+          <input type="text" id="school" name="school">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="qualification">Last Qualification</label>
+          <input type="text" id="qualification" name="qualification">
+        </div>
+
+        <div class="form-group">
+          <label for="marks">Marks/Grade</label>
+          <input type="text" id="marks" name="marks">
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="father">Father's Name</label>
+          <input type="text" id="father" name="father">
+        </div>
+
+        <div class="form-group">
+          <label for="mother">Mother's Name</label>
+          <input type="text" id="mother" name="mother">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="guardian">Guardian's Name</label>
+          <input type="text" id="guardian" name="guardian">
+        </div>
+
+        <div class="form-group">
+          <label for="guardian_contact">Guardian Contact</label>
+          <input type="tel" id="guardian_contact" name="guardian_contact" pattern="[0-9]{10}">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="occupation">Occupation</label>
+        <input type="text" id="occupation" name="occupation">
+      </div>
+
+      <hr>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="emergency_name">Emergency Contact Name</label>
+          <input type="text" id="emergency_name" name="emergency_name">
+        </div>
+
+        <div class="form-group">
+          <label for="emergency_relation">Relationship</label>
+          <input type="text" id="emergency_relation" name="emergency_relation">
+        </div>
+
+        <div class="form-group">
+          <label for="emergency_number">Contact Number</label>
+          <input type="tel" id="emergency_number" name="emergency_number" pattern="[0-9]{10}">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Documents Attached</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="docs" value="Birth Certificate"> Birth Certificate</label>
+          <label><input type="checkbox" name="docs" value="Marksheet"> Previous Marksheet</label>
+          <label><input type="checkbox" name="docs" value="Photo"> Passport Size Photo</label>
+          <label><input type="checkbox" name="docs" value="Transfer Certificate"> Transfer Certificate</label>
+          <label><input type="checkbox" name="docs" value="ID Proof"> ID Proof</label>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    
+  </script>
+</body>
+</html>
 

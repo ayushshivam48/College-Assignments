@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        Grocery Heaven - Fresh & Affordable
+    </header>
+
+    <div class="options-bar">
+        <select name="categories" id="categories">
+            <option value="all">All Categories</option>
+            <option value="fruits">Fruits</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="dairy">Dairy Products</option>
+            <option value="snacks">Snacks</option>
+            <option value="beverages">Beverages</option>
+            <option value="spices">Spices</option>
+        </select>
+        <input type="text" placeholder="Search for products...">
+        <a href="#">My Orders</a>
+        <a href="#">Location</a>
+        <a href="#">Login/Sign Up</a>
+    </div>
+
+    <div class="hero">
+        Bringing Freshness From Farms to Your Home
+    </div>
+
+    <div class="container">
+        <h2 class="section-title" id="categories">Shop by Categories</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="fruits.png" alt="Fruits">
+                <h3>Fresh Fruits</h3>
+                <p>Seasonal and exotic fruits delivered to your door.</p>
+            </div>
+            <div class="product-card">
+                <img src="vegetables.png" alt="Vegetables">
+                <h3>Vegetables</h3>
+                <p>Fresh, organic vegetables picked daily.</p>
+            </div>
+            <div class="product-card">
+                <img src="dairy.png" alt="Dairy">
+                <h3>Dairy Products</h3>
+                <p>Milk, cheese, butter, and more.</p>
+            </div>
+            <div class="product-card">
+                <img src="snacks.png" alt="Snacks">
+                <h3>Snacks</h3>
+                <p>Chips, cookies, and all your favorite treats.</p>
+            </div>
+            <div class="product-card">
+                <img src="beverages.png" alt="Beverages">
+                <h3>Beverages</h3>
+                <p>Juices, sodas, and more to quench your thirst.</p>
+            </div>
+            <div class="product-card">
+                <img src="spices.png" alt="Spices">
+                <h3>Spices</h3>
+                <p>Aromatic spices to enhance your cooking.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title" id="featured">Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="apple.png" alt="Apples">
+                <h3>Organic Apples</h3>
+                <p>Crunchy and sweet apples, perfect for snacking.</p>
+            </div>
+            <div class="product-card">
+                <img src="milk.png" alt="Milk">
+                <h3>Farm Fresh Milk</h3>
+                <p>Pure and wholesome milk, fresh from the farm.</p>
+            </div>
+            <div class="product-card">
+                <img src="cookies.png" alt="Cookies">
+                <h3>Chocolate Chip Cookies</h3>
+                <p>Irresistibly delicious cookies for all ages.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <p>Contact us at <a href="mailto:support@groceryheaven.com">support@groceryheaven.com</a> or call us at +91 12345 67890.</p>
+        <p>&copy; 2025 Grocery Heaven. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
 

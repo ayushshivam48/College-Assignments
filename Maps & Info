@@ -3,7 +3,146 @@
 <head>
 <title>Maps</title>
 <style>
-    
+    body {
+    font-family: sans-serif;
+  }
+  h1 {
+    text-align: center; 
+    margin: 0 auto;
+    display: table; 
+  }
+  #map-links {
+    text-align: center;
+  }
+  #map-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+  }
+  #map-links a:hover {
+    background-color: #e0e0e0;
+  }
+  #india-map img, #world-map img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+  .country-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  .country-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  .country-item img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  .state-info {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+    position: absolute;
+    z-index: 10;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .country-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    list-style: none;
+  }
+
+  .country-list li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .country-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.15);
+    background-color: #ffffff;
+  }
+
+  .country-list li img {
+    width: 80px; 
+    height: auto;
+    margin-bottom: 5px; 
+    border: 1px solid #ccc; 
+}
+
+  .info-popup, .state-info { 
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+  }
+
+  .info-popup h3, .state-info h3 {
+    margin-top: 0;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #888;
+  }
+
+  #india-states {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    list-style: none;
+  }
+
+  #india-states li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  #india-states li:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.15);
+    background-color: #ffffff;
+  }
 </style>
 </head>
 <body>

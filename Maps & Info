@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Maps</title>
+<style>
+    
+</style>
+</head>
+<body>
 
+  <h1>Welcome to Maps</h1>
+
+  <div id="map-links">
+    <a href="#" id="india-link">India Map</a>
+    <a href="#" id="world-link">World Map</a>
+  </div>
+
+  <div id="map-container">
+    <div id="india-map" style="display:none;">
+      <img src="https://w0.peakpx.com/wallpaper/760/284/HD-wallpaper-india-maps-india-outline.jpg" alt="India Map">
+      <ul id="india-states"></ul>
+    </div>
+
+    <div id="world-map" style="display:none;">
+      <img src="https://www.mapsofworld.com/maps/world-political-maps.jpg" alt="World Map">
+      <ul class="country-list" id="world-countries"></ul>
+    </div>
+  </div>
+
+  <script>
+  
+</script>
+
+</body>
+</html>

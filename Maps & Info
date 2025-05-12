@@ -167,8 +167,154 @@
   </div>
 
   <script>
-  
-</script>
+  const indiaLink = document.getElementById('india-link');
+  const worldLink = document.getElementById('world-link');
+  const indiaMap = document.getElementById('india-map');
+  const worldMap = document.getElementById('world-map');
+  const indiaStates = document.getElementById('india-states');
+  const worldCountries = document.getElementById('world-countries');
 
+  function createInfoPopup(title, content) {
+      const popup = document.createElement('div');
+      popup.classList.add('info-popup');
+      popup.innerHTML = `
+        <h3>${title}</h3>
+        <div class="popup-content">${content}</div>
+        <span class="close-button">&times;</span>
+      `;
+      document.body.appendChild(popup);
+  
+      const closeButton = popup.querySelector('.close-button');
+      closeButton.addEventListener('click', () => {
+        popup.remove();
+      });
+  
+      return popup;
+    }
+
+    indiaLink.addEventListener('click', () => {
+    indiaMap.style.display = 'block';
+    worldMap.style.display = 'none';
+    worldCountries.innerHTML = "";
+    indiaStates.innerHTML = "";
+
+    const states = [
+      { name: "Andhra Pradesh", capital: "Hyderabad", info: "Known for: Rich culture and cuisine" },
+      { name: "Arunachal Pradesh", capital: "Itanagar", info: "Known for: Beautiful mountains and biodiversity" },
+      { name: "Assam", capital: "Dispur", info: "Known for: Tea gardens and wildlife" },
+      { name: "Bihar", capital: "Patna", info: "Known for: Historical significance and Maithili culture" },
+      { name: "Chhattisgarh", capital: "Raipur", info: "Known for: Tribal culture and mineral resources" },
+      { name: "Goa", capital: "Panaji", info: "Known for: Beaches and Portuguese heritage" },
+      { name: "Gujarat", capital: "Gandhinagar", info: "Known for: Business and vibrant culture" },
+      { name: "Haryana", capital: "Chandigarh", info: "Known for: Agriculture and dairy farming" },
+      { name: "Himachal Pradesh", capital: "Shimla", info: "Known for: Hill stations and adventure tourism" },
+      { name: "Jharkhand", capital: "Ranchi", info: "Known for: Mineral resources and tribal culture" },
+      { name: "Karnataka", capital: "Bangalore", info: "Known for: IT hub and historical sites" },
+      { name: "Kerala", capital: "Thiruvananthapuram", info: "Known for: Backwaters and spices" },
+      { name: "Madhya Pradesh", capital: "Bhopal", info: "Known for: Historical monuments and wildlife" },
+      { name: "Maharashtra", capital: "Mumbai", info: "Known for: Bollywood and financial center" },
+      { name: "Manipur", capital: "Imphal", info: "Known for: Classical dance and handlooms" },
+      { name: "Meghalaya", capital: "Shillong", info: "Known for: Scenic beauty and waterfalls" },
+      { name: "Mizoram", capital: "Aizawl", info: "Known for: Lush greenery and tribal culture" },
+      { name: "Nagaland", capital: "Kohima", info: "Known for: Unique tribal traditions" },
+      { name: "Odisha", capital: "Bhubaneswar", info: "Known for: Temples and beaches" },
+      { name: "Punjab", capital: "Chandigarh", info: "Known for: Agriculture and Sikh culture" },
+      { name: "Rajasthan", capital: "Jaipur", info: "Known for: Forts and palaces" },
+      { name: "Sikkim", capital: "Gangtok", info: "Known for: Himalayan scenery and monasteries" },
+      { name: "Tamil Nadu", capital: "Chennai", info: "Known for: Temples and classical arts" },
+      { name: "Telangana", capital: "Hyderabad", info: "Known for: IT hub and unique culture" },
+      { name: "Tripura", capital: "Agartala", info: "Known for: Bamboo crafts and tribal culture" },
+      { name: "Uttar Pradesh", capital: "Lucknow", info: "Known for: Historical sites and diverse culture" },
+      { name: "Uttarakhand", capital: "Dehradun", info: "Known for: Himalayan ranges and pilgrimage sites" },
+      { name: "West Bengal", capital: "Kolkata", info: "Known for: Culture and Durga Puja" },
+      { name: "Andaman and Nicobar Islands", capital: "Port Blair", info: "Known for: Beaches and marine life" },
+      { name: "Chandigarh", capital: "Chandigarh", info: "Known for: Planned city and architecture" },
+      { name: "Dadra and Nagar Haveli and Daman and Diu", capital: "Daman", info: "Known for: Coastal areas and Portuguese heritage" },
+      { name: "Delhi", capital: "New Delhi", info: "Known for: Capital city and historical monuments" },
+      { name: "Jammu and Kashmir", capital: "Srinagar (Summer), Jammu (Winter)", info: "Known for: Scenic beauty and cultural heritage" },
+      { name: "Ladakh", capital: "Leh", info: "Known for: High-altitude desert and Buddhist culture" },
+      { name: "Lakshadweep", capital: "Kavaratti", info: "Known for: Coral islands and beaches" },
+      { name: "Puducherry", capital: "Puducherry", info: "Known for: French colonial heritage and beaches" }
+    ];
+
+    states.forEach(state => {
+        const listItem = document.createElement('li');
+        listItem.textContent = state.name;
+        indiaStates.appendChild(listItem);
+  
+        listItem.addEventListener('click', () => {
+          // Remove existing state info if any
+          const existingPopup = document.querySelector('.state-info');
+          if (existingPopup) {
+            existingPopup.remove();
+          }
+  
+          const stateInfoWindow = document.createElement('div');
+          stateInfoWindow.classList.add('state-info');
+          stateInfoWindow.innerHTML = `<h3>${state.name}</h3><p>Capital: ${state.capital}</p><p>${state.info}</p><span class="close-button">&times;</span>`;
+          document.body.appendChild(stateInfoWindow);
+  
+          const closeButton = stateInfoWindow.querySelector('.close-button');
+          closeButton.addEventListener('click', () => {
+            stateInfoWindow.remove();
+          });
+        });
+      });
+    });
+
+  worldLink.addEventListener('click', () => {
+    worldMap.style.display = 'block';
+    indiaMap.style.display = 'none';
+    indiaStates.innerHTML = "";
+    worldCountries.innerHTML = "";
+  
+    const countries = [
+  { name: "United States", flag: "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg", info: "Known for: Diverse landscapes and culture" },
+  { name: "Canada", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/800px-Flag_of_Canada_%28Pantone%29.svg.png", info: "Known for: Vast wilderness and friendly people" },
+  { name: "Brazil", flag: "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg", info: "Known for: Amazon rainforest and vibrant culture" },
+  { name: "India", flag: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg", info: "Known for: Rich history and diverse traditions" },
+  { name: "China", flag: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg", info: "Known for: Ancient civilization and modern development" },
+  { name: "Russia", flag: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg", info: "Known for: Vast territory and cultural heritage" },
+  { name: "Australia", flag: "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg", info: "Known for: Unique wildlife and stunning landscapes" },
+  { name: "Japan", flag: "https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg", info: "Known for: Technology and rich cultural heritage" },
+  { name: "Germany", flag: "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg", info: "Known for: History, innovation and beer" },
+  { name: "France", flag: "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg", info: "Known for: Romance, fashion, and fine cuisine" },
+  { name: "United Kingdom", flag: "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg", info: "Known for: History, royalty and diverse culture" },
+  { name: "Argentina", flag: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg", info: "Known for: Tango, football and beautiful landscapes" },
+  { name: "South Africa", flag: "https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg", info: "Known for: Diverse culture and wildlife safaris" },
+  { name: "Egypt", flag: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg", info: "Known for: Ancient pyramids and rich history" },
+  { name: "Nigeria", flag: "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg", info: "Known for: Diverse culture and Nollywood" },
+  { name: "Italy", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/1500px-Flag_of_Italy.svg.png", info: "Known for: History, art, and delicious food" },
+  { name: "Spain", flag: "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg", info: "Known for: Flamenco, tapas and vibrant culture" },
+  { name: "Mexico", flag: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg", info: "Known for: Rich culture and delicious food" },
+  { name: "Indonesia", flag: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg", info: "Known for: Beautiful islands and diverse culture" },
+  { name: "Saudi Arabia", flag: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg", info: "Known for: Islamic holy sites and vast deserts" },
+];
+
+
+    countries.forEach(country => {
+      const listItem = document.createElement('li');
+
+      const flagImg = document.createElement('img');
+      flagImg.src = country.flag;
+      flagImg.alt = `${country.name} flag`;
+      listItem.appendChild(flagImg);
+
+      const countryName = document.createElement('span');
+      countryName.textContent = country.name;
+      listItem.appendChild(countryName);
+
+      worldCountries.appendChild(listItem);
+
+      listItem.addEventListener('click', () => {
+        const existingPopup = document.querySelector('.info-popup');
+        if (existingPopup) {
+          existingPopup.remove();
+        }
+        createInfoPopup(country.name, `<p>${country.info}</p>`);
+      });
+    });
+  });
+</script>
 </body>
 </html>

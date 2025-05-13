@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="file-icon" onclick="openGallery()">
+        <img src="icon.png" alt="File Icon">
+    </div>
+
+    <div class="gallery-container" id="galleryContainer">
+        <button class="back-button" onclick="backToIconPage()"></button>
+        <div class="gallery-header">One Piece</div>
+        <div class="gallery">
+            <img src="img/01.png" alt="Image 1" onclick="openModal(this, 0)">
+            <img src="img/02.png" alt="Image 2" onclick="openModal(this, 1)">
+            <img src="img/03.png" alt="Image 3" onclick="openModal(this, 2)">
+            <img src="img/04.png" alt="Image 4" onclick="openModal(this, 3)">
+            <img src="img/05.png" alt="Image 5" onclick="openModal(this, 4)">
+            <img src="img/08.png" alt="Image 6" onclick="openModal(this, 5)">
+            <img src="img/16.png" alt="Image 7" onclick="openModal(this, 6)">
+            <img src="img/06.png" alt="Image 8" onclick="openModal(this, 7)">
+            <img src="img/07.png" alt="Image 9" onclick="openModal(this, 8)">
+            <img src="img/10.png" alt="Image 10" onclick="openModal(this, 9)">
+            <img src="img/15.png" alt="Image 11" onclick="openModal(this, 10)">
+            <img src="img/12.png" alt="Image 12" onclick="openModal(this, 11)">
+            <img src="img/13.png" alt="Image 13" onclick="openModal(this, 12)">
+            <img src="img/18.png" alt="Image 14" onclick="openModal(this, 13)">
+            <img src="img/11.png" alt="Image 15" onclick="openModal(this, 14)">
+            <img src="img/14.png" alt="Image 16" onclick="openModal(this, 15)">
+            <img src="img/17.png" alt="Image 17" onclick="openModal(this, 16)">
+            <img src="img/09.png" alt="Image 18" onclick="openModal(this, 17)">
+            <img src="img/19.png" alt="Image 19" onclick="openModal(this, 18)">
+            <img src="img/20.png" alt="Image 20" onclick="openModal(this, 19)">
+            <img src="img/21.png" alt="Image 21" onclick="openModal(this, 20)">
+        </div>
+    </div>
+
+    <div class="modal" id="imageModal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <button class="modal-prev" onclick="changeImage(-1)">&#10094;</button>
+        <img id="modalImage" src="" alt="Large View">
+        <button class="modal-next" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+</html>
 

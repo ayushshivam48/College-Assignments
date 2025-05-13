@@ -177,7 +177,59 @@
     </div>
 
     <script>
-        
+        let currentIndex = 0;
+        const images = Array.from(document.querySelectorAll('.gallery img'));
+
+        function openGallery() {
+            const galleryContainer = document.getElementById('galleryContainer');
+            galleryContainer.style.display = 'flex';
+            document.querySelector('.file-icon').style.display = 'none';
+        }
+
+        function openModal(imgElement, index) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImg.src = imgElement.src;
+            currentIndex = index;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = images[currentIndex].src;
+        }
+
+        function backToIconPage() {
+            const galleryContainer = document.getElementById('galleryContainer');
+            galleryContainer.style.display = 'none';
+            document.querySelector('.file-icon').style.display = 'flex';
+            closeModal(); 
+        }
+
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' || event.key === 'Backspace') {
+                backToIconPage();
+            }
+           
+            if (event.key === 'ArrowLeft') {
+                changeImage(-1);
+            }
+            
+            if (event.key === 'ArrowRight') {
+                changeImage(1);
+            }
+        });
     </script>
 </body>
 </html>

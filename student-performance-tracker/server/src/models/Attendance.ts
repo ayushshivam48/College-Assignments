@@ -2,14 +2,13 @@ import { Schema, model, Types } from 'mongoose';
 
 const attendanceSchema = new Schema(
 	{
-		course: { type: Types.ObjectId, ref: 'Course', required: true },
+		student: { type: Types.ObjectId, ref: 'Student', required: true },
+		teacher: { type: Types.ObjectId, ref: 'Teacher' },
+		subject: { type: String },
+		course: { type: String },
+		semester: { type: Number },
 		date: { type: Date, required: true },
-		records: [
-			{
-				student: { type: Types.ObjectId, ref: 'Student', required: true },
-				status: { type: String, enum: ['present', 'absent', 'late'], required: true },
-			},
-		],
+		status: { type: String, enum: ['present', 'absent', 'late'], required: true },
 	},
 	{ timestamps: true }
 );

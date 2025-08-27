@@ -11,11 +11,14 @@ import AdminDashboard from './pages/Admin/Dashboard';
 import SearchStudents from './pages/Admin/SearchStudents';
 import SearchTeachers from './pages/Admin/SearchTeachers';
 import AssignID from './pages/Admin/AssignID';
+import AssignmentManager from './pages/Admin/Assignments';
+import AdminTimetableManager from './pages/Admin/Timetable';
 import TeacherDashboard from './pages/Teacher/Dashboard';
-import TeacherGrades from './pages/Teacher/Grades';
-import TeacherAttendance from './pages/Teacher/Attendance';
-import TeacherAnnouncements from './pages/Teacher/Announcements';
+import GradeEntry from './pages/Teacher/Grades';
+import AttendanceEntry from './pages/Teacher/Attendance';
+import AnnouncementPanel from './pages/Teacher/Announcements';
 import StudentDashboard from './pages/Student/Dashboard';
+import { useAuthStore } from './store/auth';
 
 function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -24,6 +27,11 @@ function Layout({ children }: { children: React.ReactNode }) {
 			<main>{children}</main>
 		</div>
 	);
+}
+
+function WithUser({ children }: { children: (user: any) => React.ReactNode }) {
+	const { user } = useAuthStore();
+	return <>{children(user)}</>;
 }
 
 const router = createBrowserRouter([
@@ -41,9 +49,11 @@ const router = createBrowserRouter([
 		path: '/admin',
 		element: <PrivateRoute allow={['admin']} />,
 		children: [
-			{ path: 'dashboard', element: <Layout><AdminDashboard /></Layout> },
+			{ path: 'dashboard', element: <Layout><WithUser>{(u) => <AdminDashboard user={u} />}</WithUser></Layout> },
 			{ path: 'search-student', element: <Layout><SearchStudents /></Layout> },
 			{ path: 'search-teacher', element: <Layout><SearchTeachers /></Layout> },
+			{ path: 'assignments', element: <Layout><AssignmentManager /></Layout> },
+			{ path: 'timetable', element: <Layout><AdminTimetableManager /></Layout> },
 			{ path: 'assign-id', element: <Layout><AssignID /></Layout> },
 		],
 	},
@@ -51,17 +61,17 @@ const router = createBrowserRouter([
 		path: '/teacher',
 		element: <PrivateRoute allow={['teacher']} />,
 		children: [
-			{ path: 'dashboard', element: <Layout><TeacherDashboard /></Layout> },
-			{ path: 'grades', element: <Layout><TeacherGrades /></Layout> },
-			{ path: 'attendance', element: <Layout><TeacherAttendance /></Layout> },
-			{ path: 'announcements', element: <Layout><TeacherAnnouncements /></Layout> },
+			{ path: 'dashboard', element: <Layout><WithUser>{(u) => <TeacherDashboard user={u} />}</WithUser></Layout> },
+			{ path: 'grades', element: <Layout><GradeEntry /></Layout> },
+			{ path: 'attendance', element: <Layout><WithUser>{(u) => <AttendanceEntry user={u} />}</WithUser></Layout> },
+			{ path: 'announcements', element: <Layout><AnnouncementPanel /></Layout> },
 		],
 	},
 	{
 		path: '/student',
 		element: <PrivateRoute allow={['student']} />,
 		children: [
-			{ path: 'dashboard', element: <Layout><StudentDashboard /></Layout> },
+			{ path: 'dashboard', element: <Layout><WithUser>{(u) => <StudentDashboard user={u} />}</WithUser></Layout> },
 		],
 	},
 ]);

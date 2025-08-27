@@ -47,16 +47,16 @@ const TeacherDashboard = ({ user }: { user?: any }) => {
 	const subjectOptions = [...new Set(assignments.map((a) => a.subject))];
 
 	return (
-		<div className="min-h-screen bg-gray-100">
+		<div className="min-h-screen bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-100">
 			<div className="flex flex-col lg:flex-row">
 				<TeacherSidebar />
-				<main className="flex-1 p-6 space-y-8">
+				<main className="flex-1 p-6 lg:p-10 space-y-8">
 					<h1 className="text-2xl lg:text-3xl font-bold text-gray-800">
 						<FaChalkboardTeacher className="inline mr-2 text-blue-600" />
 						Welcome, {teacher?.name || user?.name || 'Teacher'}
 					</h1>
 
-					<section className="bg-white p-6 rounded-lg shadow-md">
+					<section className="bg-white/80 backdrop-blur border border-white/20 p-6 rounded-2xl shadow-lg">
 						<h2 className="text-xl font-semibold text-blue-700 mb-4 flex items-center gap-2"><FaIdBadge /> Your Profile</h2>
 						{teacher ? (
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
@@ -71,7 +71,7 @@ const TeacherDashboard = ({ user }: { user?: any }) => {
 						) : (<p>Loading profile...</p>)}
 					</section>
 
-					<section className="bg-white p-6 rounded-lg shadow-md">
+					<section className="bg-white/80 backdrop-blur border border-white/20 p-6 rounded-2xl shadow-lg">
 						<h2 className="text-xl font-semibold text-blue-700 mb-4 flex items-center gap-2"><FaTasks /> Assigned Courses</h2>
 						{assignments.length > 0 ? (
 							<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -86,7 +86,7 @@ const TeacherDashboard = ({ user }: { user?: any }) => {
 						) : (<p>No assignments found.</p>)}
 					</section>
 
-					<section className="bg-white p-6 rounded-lg shadow-md">
+					<section className="bg-white/80 backdrop-blur border border-white/20 p-6 rounded-2xl shadow-lg">
 						<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
 							<h2 className="text-xl font-semibold text-blue-700">📅 Your Weekly Timetable</h2>
 							<select className="border px-4 py-2 rounded bg-gray-50 text-sm" value={timetableDay} onChange={(e) => setTimetableDay(e.target.value)} aria-label="Filter timetable by day">
@@ -124,7 +124,7 @@ const TeacherDashboard = ({ user }: { user?: any }) => {
 						)}
 					</section>
 
-					<section className="bg-white p-6 rounded-lg shadow-md">
+					<section className="bg-white/80 backdrop-blur border border-white/20 p-6 rounded-2xl shadow-lg">
 						<h2 className="text-xl font-semibold text-blue-700 mb-4">🎯 Filter Students</h2>
 						<div className="flex flex-wrap gap-4">
 							<select className="border px-4 py-2 rounded bg-gray-50" value={filter.course} onChange={(e) => setFilter((prev) => ({ ...prev, course: e.target.value }))}>

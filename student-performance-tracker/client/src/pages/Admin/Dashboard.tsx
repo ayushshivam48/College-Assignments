@@ -143,11 +143,11 @@ const AdminDashboard = ({ user }: { user?: any }) => {
 	};
 
 	return (
-		<div className="min-h-screen bg-gray-100">
+		<div className="min-h-screen bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-100">
 			<div className="flex flex-col lg:flex-row">
 				<AdminSidebar />
-				<main className="flex-1 p-6 space-y-10">
-					<section className="bg-white p-6 rounded-xl shadow">
+				<main className="flex-1 p-6 lg:p-10 space-y-10">
+					<section className="bg-white/80 backdrop-blur border border-white/20 p-6 rounded-2xl shadow-lg">
 						<h2 className="text-2xl font-semibold flex items-center gap-2 mb-4">
 							<FaUserShield className="text-purple-600" /> Admin Info
 						</h2>
@@ -166,7 +166,7 @@ const AdminDashboard = ({ user }: { user?: any }) => {
 						)}
 					</section>
 
-					<section className="bg-white p-6 rounded-xl shadow">
+					<section className="bg-white/80 backdrop-blur border border-white/20 p-6 rounded-2xl shadow-lg">
 						<h2 className="text-xl font-semibold flex items-center gap-2 mb-4"><FaUserGraduate className="text-blue-500" /> Latest Enrolled Students</h2>
 						{loading.students ? <p>Loading students...</p> : students.length === 0 ? <p>No students found.</p> : (
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-96 overflow-y-auto">
@@ -181,7 +181,7 @@ const AdminDashboard = ({ user }: { user?: any }) => {
 						)}
 					</section>
 
-					<section className="bg-white p-6 rounded-xl shadow">
+					<section className="bg-white/80 backdrop-blur border border-white/20 p-6 rounded-2xl shadow-lg">
 						<h2 className="text-xl font-semibold flex items-center gap-2 mb-4"><FaChalkboardTeacher className="text-green-600" /> Latest Appointed Teachers</h2>
 						{loading.teachers ? <p>Loading teachers...</p> : teachers.length === 0 ? <p>No teachers found.</p> : (
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-96 overflow-y-auto">
@@ -196,7 +196,7 @@ const AdminDashboard = ({ user }: { user?: any }) => {
 						)}
 					</section>
 
-					<section className="bg-white p-6 rounded-xl shadow">
+					<section className="bg-white/80 backdrop-blur border border-white/20 p-6 rounded-2xl shadow-lg">
 						<div className="flex justify-between items-center mb-4">
 							<h2 className="text-xl font-semibold flex items-center gap-2"><FaBook className="text-indigo-500" /> New Course Assignments</h2>
 							<button onClick={() => { setShowForm((prev) => !prev); setForm({ course: "", semester: "", subject: "", teacher: "" }); setFormError(""); setFormSuccess(""); }} className="flex items-center gap-2 bg-indigo-600 text-white px-3 py-2 rounded hover:bg-indigo-700">

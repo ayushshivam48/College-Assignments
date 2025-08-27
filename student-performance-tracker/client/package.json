@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.85.5",
+    "@types/aos": "^3.0.7",
+    "aos": "^2.3.4",
     "axios": "^1.11.0",
     "chart.js": "^4.5.0",
     "react": "^19.1.1",

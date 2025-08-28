@@ -3,6 +3,7 @@ import { listEnrollmentAssignments, createEnrollmentAssignment, updateEnrollment
 
 const router = Router();
 
+// Kept to avoid breaking clients, but returns removed status
 router.get('/enrollment-assignments', listEnrollmentAssignments);
 router.post('/enrollment-assignments/create', createEnrollmentAssignment);
 router.put('/enrollment-assignments/:id', updateEnrollmentAssignment);

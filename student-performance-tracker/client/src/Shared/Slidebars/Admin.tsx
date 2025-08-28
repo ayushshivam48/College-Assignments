@@ -9,7 +9,6 @@ export default function AdminSidebar() {
 				<NavLink to="/admin/search-teacher" className={({ isActive }) => `${isActive ? 'font-semibold text-blue-600' : ''} block px-2 py-1 rounded hover:bg-gray-50`}>Search Teachers</NavLink>
 				<NavLink to="/admin/assignments" className={({ isActive }) => `${isActive ? 'font-semibold text-blue-600' : ''} block px-2 py-1 rounded hover:bg-gray-50`}>Assignments</NavLink>
 				<NavLink to="/admin/timetable" className={({ isActive }) => `${isActive ? 'font-semibold text-blue-600' : ''} block px-2 py-1 rounded hover:bg-gray-50`}>Timetable</NavLink>
-				<NavLink to="/admin/assign-id" className={({ isActive }) => `${isActive ? 'font-semibold text-blue-600' : ''} block px-2 py-1 rounded hover:bg-gray-50`}>Assign ID</NavLink>
 			</nav>
 		</aside>
 	);

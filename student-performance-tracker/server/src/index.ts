@@ -17,6 +17,7 @@ import timetablesRoutes from './routes/timetables.routes.js';
 import resultsRoutes from './routes/results.routes.js';
 import announcementsRoutes from './routes/announcements.routes.js';
 import enrollmentAssignmentsRoutes from './routes/enrollmentAssignments.routes.js';
+import usersRoutes from './routes/users.routes.js';
 
 const app = express();
 app.use(
@@ -45,7 +46,7 @@ app.use('/', assignmentsRoutes);
 app.use('/', timetablesRoutes);
 app.use('/', resultsRoutes);
 app.use('/', announcementsRoutes);
-app.use('/', enrollmentAssignmentsRoutes);
+app.use('/', usersRoutes);
 
 app.use('/api', subjectsRoutes);
 app.use('/api', teachersRoutes);
@@ -54,7 +55,7 @@ app.use('/api', assignmentsRoutes);
 app.use('/api', timetablesRoutes);
 app.use('/api', resultsRoutes);
 app.use('/api', announcementsRoutes);
-app.use('/api', enrollmentAssignmentsRoutes);
+app.use('/api', usersRoutes);
 
 const PORT = Number(process.env.PORT) || 4000;
 

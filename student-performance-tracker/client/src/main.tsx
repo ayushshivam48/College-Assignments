@@ -10,7 +10,7 @@ import PrivateRoute from './components/PrivateRoute';
 import AdminDashboard from './pages/Admin/Dashboard';
 import SearchStudents from './pages/Admin/SearchStudents';
 import SearchTeachers from './pages/Admin/SearchTeachers';
-import AssignID from './pages/Admin/AssignID';
+// removed AssignID
 import AssignmentManager from './pages/Admin/Assignments';
 import AdminTimetableManager from './pages/Admin/Timetable';
 import TeacherDashboard from './pages/Teacher/Dashboard';
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
 			{ path: 'search-teacher', element: <Layout><SearchTeachers /></Layout> },
 			{ path: 'assignments', element: <Layout><AssignmentManager /></Layout> },
 			{ path: 'timetable', element: <Layout><AdminTimetableManager /></Layout> },
-			{ path: 'assign-id', element: <Layout><AssignID /></Layout> },
+			// assign-id removed
 		],
 	},
 	{

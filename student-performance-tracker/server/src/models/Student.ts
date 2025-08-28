@@ -2,7 +2,7 @@ import { Schema, model, Types } from 'mongoose';
 
 const studentSchema = new Schema(
 	{
-		user: { type: Types.ObjectId, ref: 'User', required: true, unique: true },
+		user: { type: Types.ObjectId, ref: 'User' },
 		enrollment: { type: String, unique: true, index: true },
 		course: { type: String },
 		semester: { type: Number },

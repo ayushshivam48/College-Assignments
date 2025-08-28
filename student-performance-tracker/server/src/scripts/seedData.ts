@@ -6,6 +6,7 @@ import { Subject } from '../models/Subject.js';
 import { Teacher } from '../models/Teacher.js';
 import { Student } from '../models/Student.js';
 import { Timetable } from '../models/Timetable.js';
+import { Admin } from '../models/Admin.js';
 
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/student_performance';
 
@@ -200,6 +201,7 @@ async function clearAll() {
 		Teacher.deleteMany({}),
 		Student.deleteMany({}),
 		Timetable.deleteMany({}),
+		Admin.deleteMany({}),
 	]);
 	console.log('Collections cleared');
 }
@@ -224,7 +226,8 @@ async function seedSubjects() {
 async function seedUsers() {
 	console.log('Seeding admin...');
 	const adminPasswordHash = await bcrypt.hash('900800', 10);
-	await User.create({ name: 'Ayush Shivam', email: 'ayush@gmail.com', passwordHash: adminPasswordHash, role: 'admin' });
+	const adminUser = await User.create({ name: 'Ayush Shivam', email: 'ayush@gmail.com', passwordHash: adminPasswordHash, role: 'admin' });
+	await Admin.create({ user: adminUser._id, name: 'Ayush Shivam', email: 'ayush@gmail.com', institute: 'Amity University', phone: '9876543210', address: 'Admin Office' });
 
 	console.log('Seeding teachers...');
 	for (const t of dummyTeachersData) {
@@ -235,7 +238,7 @@ async function seedUsers() {
 	console.log('Seeding students...');
 	for (const s of dummyStudentsData) {
 		const user = await User.create({ name: s.name, email: s.email.toLowerCase(), passwordHash: await bcrypt.hash(s.password, 10), role: 'student' });
-		await Student.create({ user: user._id, enrollment: s.enrollment.toUpperCase(), course: s.course, currentSemester: s.currentSemester, dob: s.dob });
+		await Student.create({ user: user._id, enrollment: s.enrollment.toUpperCase(), course: s.course, currentSemester: s.currentSemester, dob: s.dob, semester: s.currentSemester });
 	}
 	console.log('Users seeded');
 }

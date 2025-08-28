@@ -6,6 +6,6 @@ export async function filterSubjects(req: Request, res: Response) {
 	const filter: any = {};
 	if (course) filter.course = course;
 	if (semester) filter.semester = Number(semester);
-	const subjects = await Subject.find(filter).lean();
+	const subjects = await Subject.find(filter).sort({ semester: 1, name: 1 }).lean();
 	return res.json(subjects);
 }

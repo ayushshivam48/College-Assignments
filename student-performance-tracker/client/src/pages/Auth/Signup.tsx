@@ -79,21 +79,26 @@ const Signup = () => {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		if (!validateForm()) return;
-		const validationPayload: any = {
-			role: formData.role,
-			universityName: formData.institute.trim(),
-			universityCode: '',
-			branchName: '',
-			branchCode: '',
-			courseName: formData.role === 'student' ? formData.course : '',
-			courseCode: '',
-			year: '',
-			studentRoll: formData.enrollment.trim(),
-			departmentName: formData.role === 'teacher' ? formData.department.trim() : '',
-			teacherRoll: formData.role === 'teacher' ? formData.teacherId.trim() : '',
-		};
 		try {
-			await api.post('/enrollment-assignments/validate', validationPayload);
+			if (formData.role === 'student') {
+				if (!formData.course || !formData.semester) {
+					setErrorMsg('Select course and semester');
+					return;
+				}
+				const students = await api.get(`/students`);
+				const exists = (Array.isArray(students) ? students : []).some((s: any) => String(s.enrollment).toUpperCase() === formData.enrollment.trim().toUpperCase());
+				if (!exists) {
+					setErrorMsg('Enrollment not found in database for verification.');
+					return;
+				}
+			} else if (formData.role === 'teacher') {
+				const teachers = await api.get(`/teachers`);
+				const exists = (Array.isArray(teachers) ? teachers : []).some((t: any) => String(t.teacherId).toUpperCase() === formData.teacherId.trim().toUpperCase());
+				if (!exists) {
+					setErrorMsg('Teacher ID not found in database for verification.');
+					return;
+				}
+			}
 			const signupPayload: any = {
 				role: formData.role,
 				name: formData.name.trim(),
